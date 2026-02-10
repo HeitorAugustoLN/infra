@@ -1,0 +1,18 @@
+stores:
+  yaml:
+    indent: 2
+keys:
+  - &axolotl age14m0n7n2pd5tr7yzgsnwe50qrwendddev0nyldjmz6sqdpsjxm3xsxqreyj
+creation_rules:
+  - path_regex: ^secrets/hosts/common\.yaml$
+    key_groups:
+      - age:
+          - *axolotl
+  - path_regex: ^secrets/hosts/axolotl\.yaml$
+    key_groups:
+      - age:
+          - *axolotl
+  - path_regex: ^secrets/users/heitor\.yaml$
+    # key_groups:
+    #   - age:
+    #       - *heitor
