@@ -1,0 +1,22 @@
+name: Dependabot auto-merge
+run-name: Dependabot auto-merge for ${{ github.event.pull_request.title }}
+on: pull_request
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  dependabot:
+    timeout-minutes: 11
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@21025c705c08248db411dc16f3619e6b5f9ea21a # v2.5.0
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --squash --delete-branch "$PR_URL"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}

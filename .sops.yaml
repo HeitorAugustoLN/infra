@@ -1,0 +1,17 @@
+keys:
+  # TODO: replace with actual public keys
+  - &heitor ssh-ed25519 AAAA...
+  - &axolotl ssh-ed25519 AAAA...
+creation_rules:
+  - path_regex: ^secrets/hosts/common\.yaml$
+    key_groups:
+      - age:
+          - *axolotl
+  - path_regex: ^secrets/hosts/axolotl\.yaml$
+    key_groups:
+      - age:
+          - *axolotl
+  - path_regex: ^secrets/users/heitor\.yaml$
+    key_groups:
+      - age:
+          - *heitor
