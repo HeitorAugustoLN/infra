@@ -82,11 +82,6 @@
 
           settings =
             let
-              enableDrm = {
-                "browser.eme.ui.enabled" = true;
-                "media.eme.enabled" = true;
-              };
-
               # https://github.com/Tiagoquix/firefox-annoyances/blob/37af5a9b1db750e13320fb5f77ed28788a587611/annoyances.js#L9-L63
               noAiSlop = {
                 "browser.ml.chat.page" = false;
@@ -127,7 +122,6 @@
               };
             in
             lib.mergeAttrsList [
-              enableDrm
               noAiSlop
               noMozillaAdvertising
             ];

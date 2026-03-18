@@ -1,11 +1,7 @@
+{ den, ... }:
 {
-  den.default.includes = [
-    (
-      { host, ... }:
-      {
-        ${host.class}.networking.hostName = host.hostName;
-      }
-    )
+  den.ctx.host.includes = [
+    den._.hostname
     (
       { host, ... }:
       {

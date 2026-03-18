@@ -1,6 +1,6 @@
-{ den, inputs, ... }:
+{ inputs, ... }:
 {
-  heitor.neovim = den.lib.parametric {
+  heitor.neovim = {
     includes = [
       (
         { host, ... }:

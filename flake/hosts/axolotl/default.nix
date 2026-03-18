@@ -25,12 +25,12 @@
         sops
         steam
         systemd-boot
-        (timezone "America/Sao_Paulo")
+        timezone._.automatic
         xdg
         zram
       ];
 
-      heitor.includes = with heitor; [
+      heitor.provides.axolotl.includes = with heitor; [
         blender
         catppuccin
         direnv

@@ -1,6 +1,6 @@
-{ den, inputs, ... }:
+{ inputs, ... }:
 {
-  nodes.nix = den.lib.parametric {
+  nodes.nix = {
     includes =
       let
         mkAspect = type: {

@@ -1,8 +1,8 @@
-{ den, ... }:
 {
-  nodes.timezone =
-    timeZone:
-    den.lib.parametric {
+  nodes.timezone.provides = {
+    automatic.nixos.services.automatic-timezoned.enable = true;
+
+    manual = timeZone: {
       includes = [
         (
           { host, ... }:
@@ -12,4 +12,5 @@
         )
       ];
     };
+  };
 }

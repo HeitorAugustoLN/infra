@@ -1,9 +1,4 @@
-{
-  den,
-  lib,
-  self,
-  ...
-}:
+{ lib, self, ... }:
 {
   flake.overlays.kdenlive = final: prev: {
     kdePackages = prev.kdePackages.overrideScope (
@@ -36,7 +31,7 @@
     );
   };
 
-  heitor.kdenlive = den.lib.parametric {
+  heitor.kdenlive = {
     includes = [
       (
         { host, ... }:

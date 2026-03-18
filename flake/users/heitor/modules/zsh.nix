@@ -1,6 +1,5 @@
-{ den, ... }:
 {
-  heitor.zsh = den.lib.parametric {
+  heitor.zsh = {
     includes = [
       (
         { host, ... }:

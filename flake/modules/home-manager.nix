@@ -1,7 +1,8 @@
-{ den, ... }:
+{ lib, ... }:
 {
-  den.default.includes = [
-    den._.home-manager
+  den.schema.user.classes = lib.mkDefault [ "homeManager" ];
+
+  den.ctx.host.includes = [
     (
       { host, ... }:
       {
