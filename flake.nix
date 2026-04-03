@@ -44,12 +44,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-aspects = {
-      type = "github";
-      owner = "vic";
-      repo = "flake-aspects";
-    };
-
     flake-parts = {
       type = "github";
       owner = "hercules-ci";
