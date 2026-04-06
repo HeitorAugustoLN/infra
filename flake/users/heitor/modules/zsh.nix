@@ -4,15 +4,16 @@
       (
         { host, ... }:
         {
-          ${host.class} =
-            { pkgs, ... }:
-            {
-              programs.zsh.enable = true;
-              users.users.heitor.shell = pkgs.zsh;
-            };
+          ${host.class}.programs.zsh.enable = true;
         }
       )
     ];
+
+    user =
+      { pkgs, ... }:
+      {
+        shell = pkgs.zsh;
+      };
 
     homeManager =
       { config, pkgs, ... }:

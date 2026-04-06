@@ -1,34 +1,29 @@
+{ lib, ... }:
 {
   _heitor.user =
     let
       username = "heitor";
     in
     {
-      homeManager.home = {
-        homeDirectory = "/home/${username}";
-        inherit username;
-      };
+      user.description = "Heitor Augusto";
+      nixos.sops.secrets."${username}/password".neededForUsers = true;
 
-      nixos =
-        { config, ... }:
-        {
-          sops.secrets."heitor/password".neededForUsers = true;
+      includes = [
+        (
+          { host, ... }:
+          lib.optionalAttrs (host.class == "nixos") {
+            user =
+              { config, ... }:
+              {
+                extraGroups = [
+                  "networkmanager"
+                  "wheel"
+                ];
 
-          users = {
-            mutableUsers = false;
-
-            users.${username} = {
-              description = "Heitor Augusto";
-
-              extraGroups = [
-                "networkmanager"
-                "wheel"
-              ];
-
-              hashedPasswordFile = config.sops.secrets."heitor/password".path;
-              isNormalUser = true;
-            };
-          };
-        };
+                hashedPasswordFile = config.sops.secrets."${username}/password".path;
+              };
+          }
+        )
+      ];
     };
 }
