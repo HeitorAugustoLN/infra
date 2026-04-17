@@ -10,3 +10,13 @@ updates:
     commit-message:
       prefix: ci
       include: scope
+  - package-ecosystem: nix
+    directory: "/"
+    schedule:
+      interval: weekly
+    labels:
+      - dependencies
+      - nix
+    commit-message:
+      prefix: ci
+      include: scope
