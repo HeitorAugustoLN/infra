@@ -18,5 +18,5 @@ updates:
       - dependencies
       - nix
     commit-message:
-      prefix: ci
+      prefix: chore
       include: scope
