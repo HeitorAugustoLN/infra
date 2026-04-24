@@ -38,7 +38,6 @@
         catppuccin
         direnv
         discord
-        firefox
         gh
         ghostty
         gimp
