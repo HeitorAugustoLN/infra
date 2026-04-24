@@ -1,17 +1,17 @@
 { den, inputs, ... }:
 {
-  heitor.neovim = {
+  heitor.helix = {
     includes = [
       (den.lib.perUser (
         { host, ... }:
         {
-          ${host.class}.nixpkgs.overlays = [ inputs.neovim.overlays.default ];
+          ${host.class}.nixpkgs.overlays = [ inputs.helix.overlays.default ];
         }
       ))
       (den.lib.perHome (
         { home }:
         {
-          ${home.class}.nixpkgs.overlays = [ inputs.neovim.overlays.default ];
+          ${home.class}.nixpkgs.overlays = [ inputs.helix.overlays.default ];
         }
       ))
     ];
@@ -20,12 +20,11 @@
       { pkgs, ... }:
       {
         home = {
-          packages = [ pkgs.nvim-heitor ];
+          packages = [ pkgs.hx ];
 
           sessionVariables = {
-            EDITOR = "nvim";
-            MANPAGER = "nvim +Man!";
-            VISUAL = "nvim";
+            EDITOR = "hx";
+            VISUAL = "hx";
           };
         };
       };

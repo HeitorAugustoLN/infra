@@ -1,4 +1,7 @@
-{ _heitor, ... }:
+{ _heitor, nodes, ... }:
 {
-  den.aspects.heitor.includes = [ _heitor.user ];
+  den.aspects.heitor.includes = [
+    nodes.nix._.trustedUser
+    _heitor.user
+  ];
 }

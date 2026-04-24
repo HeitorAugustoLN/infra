@@ -1,7 +1,8 @@
+{ den, ... }:
 {
   nodes.nh.includes = [
-    (
-      { host, ... }:
+    (den.lib.perHost (
+      { host }:
       {
         ${host.class}.programs.nh = {
           enable = true;
@@ -14,9 +15,9 @@
           };
         };
       }
-    )
-    (
-      { home, ... }:
+    ))
+    (den.lib.perHome (
+      { home }:
       {
         ${home.class} =
           { config, ... }:
@@ -33,6 +34,6 @@
             };
           };
       }
-    )
+    ))
   ];
 }

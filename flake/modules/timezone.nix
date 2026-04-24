@@ -1,15 +1,16 @@
+{ den, ... }:
 {
   nodes.timezone.provides = {
     automatic.nixos.services.automatic-timezoned.enable = true;
 
     manual = timeZone: {
       includes = [
-        (
-          { host, ... }:
+        (den.lib.perHost (
+          { host }:
           {
-            ${host.class}.time.timeZone = timeZone;
+            ${host.class}.time = { inherit timeZone; };
           }
-        )
+        ))
       ];
     };
   };

@@ -9,7 +9,7 @@
         let
           extensions = with pkgs.gnomeExtensions; [
             alphabetical-app-grid
-            appindicator # I hate system tray, but some apps keep using this awful behavior.
+            appindicator # Kept for apps that still rely on the system tray.
           ];
         in
         {
@@ -25,16 +25,8 @@
                 wallpaper = {
                   color-shading-type = "solid";
                   picture-options = "zoom";
-
-                  picture-uri =
-                    let
-                      wallpaper = pkgs.runCommand "catppuccin-mocha-crust.png" {
-                        nativeBuildInputs = [ pkgs.imagemagick ];
-                      } ''magick -size 1x1 xc:"#11111B" "$out"'';
-                    in
-                    "file://${wallpaper}";
-
-                  primary-color = "#11111B";
+                  picture-uri = "file://${pkgs.gnome-backgrounds}/share/backgrounds/gnome/amber-d.jxl";
+                  primary-color = "#ff7800";
                   secondary-color = "#000000";
                 };
               in
@@ -79,7 +71,7 @@
                   clock-format = "24h";
                   clock-show-weekday = true;
                   color-scheme = "prefer-dark";
-                  gtk-enable-primary-paste = false; # Awful behavior, disabled by default in GNOME 50 (finally), but currently it is not.
+                  gtk-enable-primary-paste = false; # Prefer explicit paste behavior; this becomes the default in GNOME 50.
                 };
 
                 "org/gtk/settings/file-chooser".clock-format = "24h";

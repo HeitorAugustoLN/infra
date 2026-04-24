@@ -51,6 +51,27 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    helium = {
+      type = "github";
+      owner = "schembriaiden";
+      repo = "helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    helix = {
+      type = "github";
+      owner = "HeitorAugustoLN";
+      repo = "hx";
+
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        import-tree.follows = "import-tree";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
     home-manager = {
       type = "github";
       owner = "nix-community";

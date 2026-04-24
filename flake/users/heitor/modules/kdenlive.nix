@@ -1,4 +1,9 @@
-{ lib, self, ... }:
+{
+  den,
+  lib,
+  self,
+  ...
+}:
 {
   flake.overlays.kdenlive = final: prev: {
     kdePackages = prev.kdePackages.overrideScope (
@@ -33,18 +38,18 @@
 
   heitor.kdenlive = {
     includes = [
-      (
+      (den.lib.perUser (
         { host, ... }:
         {
           ${host.class}.nixpkgs.overlays = [ self.overlays.kdenlive ];
         }
-      )
-      (
-        { home, ... }:
+      ))
+      (den.lib.perHome (
+        { home }:
         {
           ${home.class}.nixpkgs.overlays = [ self.overlays.kdenlive ];
         }
-      )
+      ))
     ];
 
     homeManager =

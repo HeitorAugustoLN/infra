@@ -1,6 +1,6 @@
 {
   nodes.locale.nixos.i18n = {
-    defaultLocale = "en_US.UTF-8";
+    defaultLocale = "pt_BR.UTF-8";
 
     extraLocaleSettings = {
       LC_ADDRESS = "pt_BR.UTF-8";

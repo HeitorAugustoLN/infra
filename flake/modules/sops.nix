@@ -1,4 +1,9 @@
-{ inputs, self, ... }:
+{
+  den,
+  inputs,
+  self,
+  ...
+}:
 {
   nodes.sops = {
     homeManager =
@@ -13,8 +18,8 @@
       };
 
     includes = [
-      (
-        { host, ... }:
+      (den.lib.perHost (
+        { host }:
         {
           ${host.class} =
             { config, ... }:
@@ -31,7 +36,7 @@
               };
             };
         }
-      )
+      ))
     ];
   };
 }

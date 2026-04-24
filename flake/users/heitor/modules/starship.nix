@@ -4,9 +4,16 @@
     {
       catppuccin.starship.enable = true;
 
-      programs.starship = {
-        enable = true;
-        enableTransience = config.programs.fish.enable;
+      programs = {
+        nushell.environmentVariables = {
+          PROMPT_INDICATOR_VI_INSERT = "";
+          PROMPT_INDICATOR_VI_NORMAL = "";
+        };
+
+        starship = {
+          enable = true;
+          enableTransience = config.programs.fish.enable;
+        };
       };
     };
 }
