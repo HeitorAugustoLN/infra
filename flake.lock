@@ -113,11 +113,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1777445753,
-        "narHash": "sha256-FqwjhUWRGzpHyYRDYB9f4r9nhlFRv31on7UsX9WqVrs=",
+        "lastModified": 1778054244,
+        "narHash": "sha256-4yvin6Bm8MxAlAr7QCNSDFQz9WCzBltW+lYdGt1vsv4=",
         "owner": "schembriaiden",
         "repo": "helium-browser-nix-flake",
-        "rev": "1de208c9ba96502c4e53ac01c1044d6da2065471",
+        "rev": "b2790d366bbafa7cd01984a8c7eabe73fe10fd41",
         "type": "github"
       },
       "original": {
