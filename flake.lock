@@ -114,11 +114,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1784192406,
-        "narHash": "sha256-+b33BbohrTbGCG0JzV/QkGzM5DzwYXQEqc3/n5beXnQ=",
+        "lastModified": 1784431410,
+        "narHash": "sha256-G671MLe+jUgQWte0S182mDB8vlxfbyY9hH88N5ZjLXU=",
         "owner": "schembriaiden",
         "repo": "helium-browser-nix-flake",
-        "rev": "dd943d48affe63620da8adb576035cde82c85394",
+        "rev": "52e6bfd6e6b5eaab2e96095f7d936e5bf6a72f24",
         "type": "github"
       },
       "original": {
@@ -349,11 +349,11 @@
     },
     "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1784182977,
-        "narHash": "sha256-Hy8zg2HEcsk4WqowQK3UKRXz1fdQM7Z2un3nSyLbJaQ=",
+        "lastModified": 1784255083,
+        "narHash": "sha256-0Jz8G3+3g6i/l4aISUri0EidLnREelCff0m6+pE6aZg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "29c22b7761070f37c4c2b0dd6a8777f0bd43e268",
+        "rev": "fc51889f81924f15fba77a3c0b79cfb3f78fe0d4",
         "type": "github"
       },
       "original": {
